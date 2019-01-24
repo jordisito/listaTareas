@@ -53,11 +53,13 @@ let AddItemsComponent = Vue.extend({
         add() {
             let tarea = this.newTarea.trim();
 
-            this.tareas.push({
-                name: tarea,
-                checked: false
-            });
-            this.newTarea = '';
+            if (tarea) { 
+                this.tareas.push({
+                    name: tarea,
+                    checked: false
+                });
+            }
+           this.newTarea = '';
         }
     },
     template: `
